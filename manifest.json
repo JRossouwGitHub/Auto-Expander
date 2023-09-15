@@ -1,0 +1,33 @@
+{
+  "author": "Palm Top Digital Solutions",
+  "manifest_version": 3,
+  "name": "Auto-Expander",
+  "description": "Automatically expand any <div> boxes from a list of class names.",
+  "version": "0.9.1",
+  "version_name": "0.9.1 beta",
+  "action": {
+    "default_popup": "AE_index.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "AE_background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["AE_main.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
